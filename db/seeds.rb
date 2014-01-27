@@ -29,7 +29,7 @@ class Seed
   def generate_orders
     100.times do |i|
       user  = User.find(Random.new.rand(1..50))
-      order = Order.create(user_id: user.id)
+      order = Order.create(user_id: user.id, status: "submitted")
       add_items(order)
       puts "Order #{i}: Order for #{user.name} created!"
     end
